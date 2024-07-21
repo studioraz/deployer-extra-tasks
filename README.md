@@ -1,4 +1,4 @@
-# Custom Deployer Tasks
+#  StudioRaz Deployer Extra Tasks
 
 A Composer package containing custom Deployer tasks for Magento, shared across multiple projects.
 
