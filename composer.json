@@ -1,9 +1,9 @@
 {
     "name": "studioraz/deployer-extra-tasks",
-    "description": "Custom Deployer tasks for Magento, shared across multiple projects.",
+    "description": "Extra Deployer tasks for Studio Raz Projects",
     "type": "library",
+    "version": "1.0.0",
     "require": {
-        "php": ">=7.4",
         "deployer/deployer": "^7.4"
     },
     "autoload": {

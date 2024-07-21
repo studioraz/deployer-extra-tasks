@@ -1,11 +1,14 @@
 <?php
 
-namespace StudioRaz\DeployerExtraTasks\Deployer\Magento;
+namespace StudioRaz\DeployerExtraTasks\Deployer\StudioRaz;
 
+use function Deployer\desc;
+use function Deployer\task;
 use function Deployer\get;
 use function Deployer\run;
 use function Deployer\writeln;
 
+desc('Kill Magento cron process');
 task('studioraz:cron:kill', function () {
     $projectPath = get('deploy_path');
 

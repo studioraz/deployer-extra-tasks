@@ -2,10 +2,13 @@
 
 namespace StudioRaz\DeployerExtraTasks\Deployer\Deploy;
 
+use function Deployer\desc;
+use function Deployer\task;
 use function Deployer\run;
 use function Deployer\warning;
 use function Deployer\commandExist;
 
+desc('Installs vendors');
 task('deploy:vendors', function () {
     if (!commandExist('unzip')) {
         warning('To speed up composer installation setup "unzip" command with PHP zip extension.');

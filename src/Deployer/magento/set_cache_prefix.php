@@ -2,11 +2,16 @@
 
 namespace StudioRaz\DeployerExtraTasks\Deployer\Magento;
 
+use function Deployer\desc;
+use function Deployer\task;
 use function Deployer\download;
 use function Deployer\get;
 use function Deployer\run;
 use function Deployer\upload;
+use const StudioRaz\DeployerExtraTasks\Deployer\ENV_CONFIG_FILE_PATH;
+use const StudioRaz\DeployerExtraTasks\Deployer\TMP_ENV_CONFIG_FILE_PATH;
 
+desc('Update cache id_prefix');
 task('magento:set_cache_prefix', function () {
     $tmpConfigFile = tempnam(sys_get_temp_dir(), 'deployer_config');
     download('{{deploy_path}}/shared/{{magento_dir}}/' . ENV_CONFIG_FILE_PATH, $tmpConfigFile);
