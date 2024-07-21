@@ -1,12 +1,10 @@
-Sure, here's your updated `README.md` file with the command to add the repository included in the installation instructions:
-
 # StudioRaz Deployer Extra Tasks
 
 A Composer package containing custom Deployer tasks for Magento, shared across multiple projects.
 
 ## Installation
 
-First, add the custom repository to deployer's composer.json file. 
+First, add the custom repository to Deployer's composer.json file:
 
 ```bash
 composer config repositories.studioraz-private-packagist composer https://repo.packagist.com/studioraz/
@@ -43,6 +41,19 @@ Kills all Magento cron processes related to the current deployment.
 ### Install Vendors
 
 Installs composer vendors for the Magento project.
-```
 
-This updated `README.md` file includes the command to add the repository before requiring the package, ensuring that the custom repository is correctly configured before attempting to install the package.
+### Build Tailwind CSS for Hyva Themes
+
+Builds Tailwind CSS files for specified Hyva themes.
+
+#### Configuration
+
+Set the `hyva_themes` configuration with the theme paths in your `deploy.php`:
+
+```php
+set('hyva_themes', [
+    'magento2-default-theme' => 'vendor/hyva-themes/magento2-default-theme',
+    'magento2-hyva-base-theme' => 'vendor/studioraz/magento2-hyva-base-theme'
+]);
+```
+This task will iterate over the specified themes and run the Tailwind build process for each.
