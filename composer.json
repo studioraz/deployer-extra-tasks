@@ -2,7 +2,7 @@
     "name": "studioraz/deployer-extra-tasks",
     "description": "Extra Deployer tasks for Studio Raz Projects",
     "type": "library",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "require": {
         "deployer/deployer": "^7.4"
     },
