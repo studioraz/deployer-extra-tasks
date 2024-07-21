@@ -1,0 +1,14 @@
+{
+    "name": "studioraz/deployer-extra-tasks",
+    "description": "Custom Deployer tasks for Magento, shared across multiple projects.",
+    "type": "library",
+    "require": {
+        "php": ">=7.4",
+        "deployer/deployer": "^7.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "StudioRaz\\DeployerExtraTasks\\": "src/"
+        }
+    }
+}
