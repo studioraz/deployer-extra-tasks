@@ -26,5 +26,9 @@
         "psr-4": {
             "StudioRaz\\DeployerExtraTasks\\": "src/"
         }
+    },
+    "scripts": {
+        "phpstan": "phpstan analyse src",
+        "phpcs": "phpcs --standard=PSR12 src"
     }
 }
