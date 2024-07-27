@@ -1,0 +1,6 @@
+parameters:
+    level: max
+    paths:
+        - src
+    scanFiles:
+        - vendor/deployer/deployer/src/functions.php

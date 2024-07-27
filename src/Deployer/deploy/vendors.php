@@ -2,11 +2,11 @@
 
 namespace StudioRaz\DeployerExtraTasks\Deployer\Deploy;
 
-use function Deployer\desc;
-use function Deployer\task;
-use function Deployer\run;
-use function Deployer\warning;
 use function Deployer\commandExist;
+use function Deployer\desc;
+use function Deployer\run;
+use function Deployer\task;
+use function Deployer\warning;
 
 desc('Installs vendors');
 task('deploy:vendors', function () {

@@ -12,6 +12,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+
       - name: Validate composer.json and composer.lock
         run: composer validate
 
@@ -28,10 +33,9 @@ jobs:
             ${{ runner.os }}-composer-
 
       - name: Install dependencies
-        if: steps.composer-cache.outputs.cache-hit != 'true'
         run: composer install --prefer-dist --no-progress
 
-      - name: Run test suite
+      - name: Run PHPStan
         run: composer phpstan
 
   phpcs:
@@ -39,6 +43,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+
       - name: Validate composer.json and composer.lock
         run: composer validate
 
@@ -55,7 +64,6 @@ jobs:
             ${{ runner.os }}-composer-
 
       - name: Install dependencies
-        if: steps.composer-cache.outputs.cache-hit != 'true'
         run: composer install --prefer-dist --no-progress
 
       - name: Run PHP_CodeSniffer
