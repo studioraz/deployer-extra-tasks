@@ -19,15 +19,10 @@ task('dev:build-static', function() {
         throw new \Exception('Error: this task can only be executed on localhost.');
     }
 
-    // Set current path and execute the build tasks
-    set('current_path', __DIR__ . '/../../../../../../..');
-
     // Delete var/view_preprocessed and pub/static/*
     writeln('Clearing var/view_preprocessed and pub/static...');
     run('cd {{release_or_current_path}}/{{magento_dir}} && rm -rf var/view_preprocessed pub/static/*');
 
-    invoke('studioraz:hyva:build:tailwind');
-    invoke('magento:sync:content_version');
     invoke('magento:deploy:assets');
     invoke('magento:cache:flush');
 
